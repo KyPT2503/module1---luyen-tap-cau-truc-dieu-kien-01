@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<h1>Bai 1</h1>
+<input type="text" id="bai1_a">
+<input type="text" id="bai1_b" onchange="bai1()">
+<p id="bai1_output"></p>
+<h1>Bai 2</h1>
+<input type="text" id="bai2_input" onchange="bai2()">
+<p id="bai2_output"></p>
+<h1>Bai 3</h1>
+<input type="text" id="bai3_input" onchange="bai3()">
+<p id="bai3_output"></p>
+<h1>Bai 4</h1>
+<input type="text" id="bai4_a">
+<input type="text" id="bai4_b">
+<input type="text" id="bai4_c" onchange="bai4()">
+<p id="bai4_output"></p>
+<h1>Bai 5</h1>
+<input type="text" id="bai5_giuaki" placeholder="diem giua ki">
+<input type="text" id="bai5_cuoiki" placeholder="diem cuoi ki" onchange="bai5()">
+<p id="bai5_output"></p>
+<h1>Bai 6</h1>
+<input type="text" id="bai6_doanhso" placeholder="nhap doanh so (an theo 10% doanh so)" onchange="bai6()">k
+<p id="bai6_output"></p>
+<h1>Bai 7</h1>
+<input type="text" id="bai7_input" onchange="bai7()" placeholder="Nhap so dien">1 so 4k
+<p id="bai7_output"></p>
+</body>
+<script>
+    function bai1()
+    {
+        let a=+document.getElementById('bai1_a').value;
+        let b=+document.getElementById('bai1_b').value;
+        if(a%b==0)
+        {
+            document.getElementById('bai1_output').innerHTML='Chia het';
+        }
+        else
+        {
+            document.getElementById('bai1_output').innerHTML='Khong chia het';
+        }
+    }
+    function bai2()
+    {
+        if(+document.getElementById('bai2_input').value>=15)
+        {
+            document.getElementById('bai2_output').innerHTML='Du tuoi';
+        }
+        else
+        {
+            document.getElementById('bai2_output').innerHTML='Khong du tuoi';
+        }
+    }
+    function bai3()
+    {
+        if(+document.getElementById('bai3_input').value>=0)
+        {
+            document.getElementById('bai3_output').innerHTML='Lon hon hoac bang 0';
+        }
+        else
+        {
+            document.getElementById('bai3_output').innerHTML='Nho hon 0';
+        }
+    }
+    function bai4()
+    {
+        let a=+document.getElementById('bai4_a').value;
+        let b=+document.getElementById('bai4_b').value;
+        let c=+document.getElementById('bai4_c').value;
+        let max=(a>b)?a:b;
+        max=(max>c)?max:c;
+        document.getElementById('bai4_output').innerHTML='max = '+max;
+    }
+    function bai5()
+    {
+        document.getElementById('bai5_output').innerHTML=((+document.getElementById('bai5_giuaki').value)+2*(+document.getElementById('bai5_cuoiki').value))/3;
+    }
+    function bai6()
+    {
+        document.getElementById('bai6_output').innerHTML=(+document.getElementById('bai6_doanhso').value)/10 + 'k';
+    }
+    function bai7()
+    {
+        document.getElementById('bai7_output').innerHTML=(+document.getElementById('bai7_input').value)*4+'k';
+    }
+</script>
+</html>
